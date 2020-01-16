@@ -13,38 +13,35 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      {/* Always shows a header, even in smaller screens. */}
-      <div style={{ height: "300px", position: "relative" }}>
-        <Layout fixedHeader>
-          <Header
-            title={
-              <span>
-                <span style={{ color: "#ddd" }}>Area / </span>
-                <strong>The Title</strong>
-              </span>
-            }
-          >
+      
+
+            {/* Uses a header that scrolls with the text, rather than staying locked at the top */}
+<div className="demo-big-content">
+    <Layout>
+        <Header className="header-color" title="Title" scroll>
             <Navigation>
               <Link to="/resume">Resume</Link>
               <Link to="/aboutme">About Me</Link>
               <Link to="/projects">Projects</Link>
               <Link to="/contact">Contact</Link>
             </Navigation>
-          </Header>
-          <Drawer title="Title">
+        </Header>
+        <Drawer title="Title">
             <Navigation>
               <Link to="/resume">Resume</Link>
               <Link to="/aboutme">About Me</Link>
               <Link to="/projects">Projects</Link>
               <Link to="/contact">Contact</Link>
             </Navigation>
-          </Drawer>
-          <Content>
-              <Main/>
-          </Content>
-        </Layout>
-      </div>
-    </div>
+        </Drawer>
+        <Content>
+            <Main/>
+            <div className="page-content" />
+        </Content>
+    </Layout>
+</div>
+</div>
+
   );
 };
 
